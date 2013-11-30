@@ -18,7 +18,7 @@ public class Poly3 {
         this.vec1 = vec1;
         this.vec2 = vec2;
         this.vec3 = vec3;
-        this.normal.normal(this.vec1, this.vec2, this.vec3);
+        this.normal = Vec3.normal(this.vec1, this.vec2);
     }
 
     public Poly3(Vec3 vec1, Vec3 vec2, Vec3 vec3, Vec3 colour) {
@@ -26,7 +26,7 @@ public class Poly3 {
         this.vec2 = vec2;
         this.vec3 = vec3;
         this.colour = colour;
-        this.normal.normal(this.vec1, this.vec2, this.vec3);
+        this.normal = Vec3.normal(this.vec1, this.vec2);
     }
 
     public void setVec1(Vec3 newVec) {
