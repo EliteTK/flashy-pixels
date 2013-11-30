@@ -68,4 +68,8 @@ public class Poly3 {
     public Vec3 getNormal() {
         return this.normal;
     }
+    
+    public boolean isTextured() {
+        return false;
+    }
 }
