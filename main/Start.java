@@ -5,6 +5,10 @@ import java.awt.Graphics;
 import java.util.Arrays;
 import renderer.window.Window;
 
+/**
+ *
+ * @author main
+ */
 public class Start {
 
     private static final int width = 320;
@@ -12,12 +16,12 @@ public class Start {
     private static final String title = "Test";
 
     public static void main(String[] args) {
-        
+
         System.out.println(Arrays.toString(args));
 
         Window window = new Window(width, height, title);
         window.createFrame();
-        
+
         int startX;
         int startY;
         int endX;

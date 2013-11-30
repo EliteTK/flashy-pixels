@@ -22,7 +22,7 @@ public class Window extends Canvas {
 
         Dimension size;
         size = new Dimension(width, height);
-        
+
         setPreferredSize(size);
     }
 

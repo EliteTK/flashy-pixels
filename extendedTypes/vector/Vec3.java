@@ -42,30 +42,28 @@ public class Vec3 {
      *
      * @param x1
      * @param x2
-     * @param x3
-     * Sets the values of this to 3 new values.
+     * @param x3 Sets the values of this to 3 new values.
      */
     public void setValue(double x1, double x2, double x3) {
         this.x1 = x1;
         this.x2 = x2;
         this.x3 = x3;
     }
-    
+
     /**
      *
-     * @param vec
-     * Sets the value of this to another vector.
+     * @param vec Sets the value of this to another vector.
      */
     public void setValue(Vec3 vec) {
         this.x1 = vec.x1;
         this.x2 = vec.x2;
         this.x3 = vec.x3;
     }
-    
+
     /**
      *
-     * @param array
-     * Sets the values of this to the 3 values of a length 3+ array.
+     * @param array Sets the values of this to the 3 values of a length 3+
+     * array.
      */
     public void setValue(double[] array) {
         this.x1 = array[0];
