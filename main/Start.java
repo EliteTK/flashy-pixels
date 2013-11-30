@@ -12,7 +12,7 @@ public class Start {
     private static final String title = "Test";
 
     public static void main(String[] args) {
-
+        
         System.out.println(Arrays.toString(args));
 
         Window window = new Window(width, height, title);
