@@ -7,15 +7,17 @@ import renderer.window.Window;
 
 public class Start {
 
-    private static int width = 320;
-    private static int height = 200;
-    private static String title = "Test";
+    private static final int width = 320;
+    private static final int height = 200;
+    private static final String title = "Test";
 
     public static void main(String[] args) {
 
         System.out.println(Arrays.toString(args));
 
         Window window = new Window(width, height, title);
+        window.createFrame();
+        
         int startX;
         int startY;
         int endX;
