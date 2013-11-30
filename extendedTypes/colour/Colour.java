@@ -1,6 +1,6 @@
 package extendedTypes.colour;
 
-public class Colour {
+public final class Colour {
 
     private byte R = -128;
     private byte G = -128;

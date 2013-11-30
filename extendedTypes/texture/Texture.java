@@ -1,11 +1,10 @@
 package extendedTypes.texture;
 
 import extendedTypes.colour.*;
-import java.lang.Math;
 
 public class Texture {
 
-    private Colour[][] texture;
+    private final Colour[][] texture;
     int width;
     int height;
 
@@ -18,6 +17,9 @@ public class Texture {
 
     /**
      *
+     * @param x
+     * @param y
+     * @return Colour at X,Y position on Texture.
      */
     public Colour getColourFromPos(int x, int y) {
         if ((x >= 0) && (x < width)) {
@@ -30,6 +32,9 @@ public class Texture {
 
     /**
      * Bilinear interpolator for sampling textures.
+     * @param x
+     * @param y
+     * @return Return bilinearly interpolated colour value estimate at X,Y.
      */
     public Colour getColourInterpolate(double x, double y) {
 

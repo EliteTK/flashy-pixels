@@ -1,6 +1,3 @@
-/**
- * IMPORTANT: THIS CLASS IS CURRENTLY UNDER RECONSTRUCTION.
- */
 package extendedTypes.vector;
 
 /**
