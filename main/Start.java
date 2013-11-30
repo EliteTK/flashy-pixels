@@ -2,6 +2,7 @@ package main;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Arrays;
 import renderer.window.Window;
 
 public class Start {
@@ -12,7 +13,7 @@ public class Start {
 
     public static void main(String[] args) {
 
-        System.out.println(args);
+        System.out.println(Arrays.toString(args));
 
         Window window = new Window(width, height, title);
         int startX;
