@@ -1,6 +1,6 @@
 package extendedTypes.polygon;
 
-public class TexturedPoly3 extends Poly3 {
+public class TexturedPoly3d extends Poly3d {
 
     
     @Override

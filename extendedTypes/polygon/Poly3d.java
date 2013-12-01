@@ -2,7 +2,7 @@ package extendedTypes.polygon;
 
 import extendedTypes.vector.Vec3;
 
-public class Poly3 {
+public class Poly3d {
 
     private Vec3 vec1 = new Vec3(0, 0, 0);
     private Vec3 vec2 = new Vec3(0, 0, 0);
@@ -10,18 +10,18 @@ public class Poly3 {
     private Vec3 colour = new Vec3(0, 0, 0);
     private Vec3 normal = new Vec3(0, 0, 0);
 
-    public Poly3() {
+    public Poly3d() {
 
     }
 
-    public Poly3(Vec3 vec1, Vec3 vec2, Vec3 vec3) {
+    public Poly3d(Vec3 vec1, Vec3 vec2, Vec3 vec3) {
         this.vec1 = vec1;
         this.vec2 = vec2;
         this.vec3 = vec3;
         this.normal = Vec3.normal(this.vec1, this.vec2, this.vec3);
     }
 
-    public Poly3(Vec3 vec1, Vec3 vec2, Vec3 vec3, Vec3 colour) {
+    public Poly3d(Vec3 vec1, Vec3 vec2, Vec3 vec3, Vec3 colour) {
         this.vec1 = vec1;
         this.vec2 = vec2;
         this.vec3 = vec3;
