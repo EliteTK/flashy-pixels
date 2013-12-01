@@ -37,8 +37,4 @@ public class Window extends Canvas {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
-
-    public void returnDrawingObject() {
-
-    }
 }
