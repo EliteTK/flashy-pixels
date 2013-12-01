@@ -2,6 +2,8 @@ package main;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 import java.util.Arrays;
 import renderer.window.Window;
 
@@ -22,36 +24,50 @@ public class Start {
         Window window = new Window(width, height, title);
         window.createFrame();
 
-        int startX;
-        int startY;
-        int endX;
-        int endY;
+        BufferedImage image;
+        image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+
+        int fps;
 
         while (true) {
 
-            startX = (int) (Math.random() * width);
-            startY = (int) (Math.random() * height);
-            endX = (int) (Math.random() * width);
-            endY = (int) (Math.random() * height);
+            BufferStrategy bstrat;
 
-            if (startX > endX) {
-                int temp = startX;
-                startX = endX;
-                endX = temp;
+            fps = (int) (1000000000 / delta());
+
+            for (int x = 0; x < width; x++) {
+                for (int y = 0; y < height; y++) {
+                    image.setRGB(x, y, (new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255))).getRGB());
+                    //image.setRGB(x, y, 0xDEADBE);
+                }
             }
-
-            if (startY > endY) {
-                int temp = startY;
-                startX = endY;
-                endX = temp;
-            }
-
-            Graphics g = window.getGraphics();
+            Graphics g1 = image.getGraphics();
             {
-                g.setColor(new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255)));
-                g.fillRect(startX, startY, endX, endY);
+                g1.setColor(new Color(40, 40, 40));
+                g1.fillRect(10, 10, 51, 11);
+                g1.fillRect(50, 50, 2, 2);
+                g1.setColor(new Color(255, 255, 40));
+                g1.drawString("FPS " + String.valueOf(fps), 10, 20);
             }
-            g.dispose();
+            g1.dispose();
+
+            Graphics g2 = window.getGraphics();
+            {
+
+                g2.drawImage(image, 0, 0, window);
+
+            }
+            g2.dispose();
         }
     }
+
+    private static long deltaLast = 0;
+
+    private static long delta() {
+        long time = System.nanoTime();
+        long delta = time - deltaLast;
+        deltaLast = time;
+        return delta;
+    }
+
 }
