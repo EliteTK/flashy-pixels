@@ -20,7 +20,8 @@ public class Start2 {
         System.out.println(Arrays.toString(args));
 
         Window window = new Window(width, height, title);
-        window.createFrame();
+        window.frameInit();
+        window.frame().setVisible(true);
 
         int startX;
         int startY;

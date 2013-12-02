@@ -15,14 +15,19 @@ public class Start {
 
     private static final int width = 320;
     private static final int height = 200;
+    private static final int scale = 2;
+    private static final int scaledWidth = width * scale;
+    private static final int scaledHeight = height * scale;
+    
     private static final String title = "Test";
 
     public static void main(String[] args) {
 
         System.out.println(Arrays.toString(args));
 
-        Window window = new Window(width, height, title);
-        window.createFrame();
+        Window window = new Window(scaledWidth, scaledHeight, title);
+        window.frameInit();
+        window.frame().setVisible(true);
 
         BufferedImage image;
         image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -41,23 +46,19 @@ public class Start {
                     //image.setRGB(x, y, 0xDEADBE);
                 }
             }
+            
+            window.frame().setTitle("Test   FPS: " + fps);
+            
             Graphics g1 = image.getGraphics();
             {
                 g1.setColor(new Color(40, 40, 40));
-                g1.fillRect(10, 10, 51, 11);
-                g1.fillRect(50, 50, 2, 2);
+                g1.fillRect(10, 10, 59, 11);
                 g1.setColor(new Color(255, 255, 40));
                 g1.drawString("FPS " + String.valueOf(fps), 10, 20);
             }
             g1.dispose();
 
-            Graphics g2 = window.getGraphics();
-            {
-
-                g2.drawImage(image, 0, 0, window);
-
-            }
-            g2.dispose();
+            window.drawImage(image);
         }
     }
 
