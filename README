@@ -1,6 +1,8 @@
-This is an attempt at a relatively simple Software (CPU only) 3D graphics
-engine. It is a massive work in progress and definitely nothing professional.
-Send your complaints to this-is-not-an@email.com.
+README:
+
+        This is an attempt at a relatively simple Software (CPU only) 3D
+        graphics engine. It is a massive work in progress and definitely
+        nothing professional.
 
 This was all started in Eclipse and then moved to NetBeans since eclipse didn't
 like the idea of visible text (compatibility problem - possibly some workaround
