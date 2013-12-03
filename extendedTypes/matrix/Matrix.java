@@ -62,12 +62,13 @@ public class Matrix {
      * @return Returns mat with each of its elements multiplied by multiplier.
      */
     public static double[][] multiply(double[][] mat, double multiplier) {
+        double[][] matOut = new double[mat.length][mat[0].length];
         for (int x = 0; x < mat.length; x++) {
             for (int y = 0; y < mat[0].length; y++) {
-                mat[x][y] = mat[x][y] * multiplier;
+                matOut[x][y] = mat[x][y] * multiplier;
             }
         }
-        return mat;
+        return matOut;
     }
 
     /**
@@ -76,19 +77,16 @@ public class Matrix {
      * @return Returns the inverse of the matrix mat;
      */
     public static double[][] invert(double[][] mat) {
-        for (int x = 0; x < mat.length; x++) {
-            for (int y = 0; y < mat[0].length; y++) {
-                mat[x][y] = 1 / mat[x][y];
-            }
-        }
-        return mat;
+        double[][] matOut = new double[mat.length][mat[0].length];
+        return matOut;
     }
 
     /**
      *
      * @param mat1
      * @param mat2
-     * @return Add mat1 and mat2 by corresponding elements. The determinants of mat1 and mat2 have to be the same.
+     * @return Add mat1 and mat2 by corresponding elements. The determinants of
+     * mat1 and mat2 have to be the same.
      */
     public static double[][] add(double[][] mat1, double[][] mat2) {
 
@@ -111,7 +109,8 @@ public class Matrix {
      *
      * @param mat1
      * @param mat2
-     * @return Subtract mat1 and mat2 by corresponding elements. The determinants of mat1 and mat2 have to be the same.
+     * @return Subtract mat1 and mat2 by corresponding elements. The
+     * determinants of mat1 and mat2 have to be the same.
      */
     public static double[][] subtract(double[][] mat1, double[][] mat2) {
 
@@ -127,6 +126,15 @@ public class Matrix {
             return matOut;
         } else {
             throw new IllegalArgumentException("Invalid matrix dimensions. Matrix: add", new ArrayIndexOutOfBoundsException());
+        }
+    }
+
+    public static void print(double[][] mat) {
+        for (int x = 0; x < mat.length; x++) {
+            for (int y = 0; y < mat[0].length; y++) {
+                System.out.print("[" + String.valueOf(mat[x][y]) + "]");
+            }
+            System.out.println();
         }
     }
 }
