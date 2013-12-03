@@ -6,7 +6,7 @@ README:
 
 This was all started in Eclipse and then moved to NetBeans since eclipse didn't
 like the idea of visible text (compatibility problem - possibly some workaround
-could be found but i always seemed to prefer the apparent "lightweightness" of
+could be found but I always seemed to prefer the apparent "lightweightness" of
 NetBeans anyway.)
 
 At the present moment the project is well underway. I am currently working on
@@ -19,6 +19,6 @@ Another important thing I am currently learning about is threads. I am slowly
 grasping the concepts of threads in java and have finally managed to get results
 that work.
 
-This is also the first project that i have ever carried on working on for so
-long. I think i can greatly thank linux for providing me with a productive
+This is also the first project that I have ever carried on working on for so
+long. I think I can greatly thank linux for providing me with a productive
 environment as well as a great learning experience.
