@@ -82,6 +82,25 @@ public class Matrix {
     /**
      *
      * @param mat
+     * @return The cofactor matrix of mat.
+     */
+    public static double[][] cofactor(double[][] mat) {
+        if (isSquare(mat)) {
+            double[][] out = new double[mat.length][mat.length];
+            for (int i = 0; i < mat.length; i++) {
+                for (int j = 0; j < mat.length; j++) {
+                    out[i][j] = cofactor(mat, i, j);
+                }
+            }
+            return out;
+        } else {
+            throw new IllegalArgumentException("Invalid matrix dimensions. Matrix: cofactor", new ArrayIndexOutOfBoundsException());
+        }
+    }
+
+    /**
+     *
+     * @param mat
      * @return The determinant of the matrix mat.
      */
     public static double determinant(double[][] mat) {
@@ -130,8 +149,12 @@ public class Matrix {
                 + (mat[0][0] * mat[1][2] * mat[2][1]));
     }
 
-    private static double detDefault(double[][]) {
-
+    private static double detDefault(double[][] mat) {
+        double val = 0.0;
+        for (int i = 0; i < mat[0].length; i++) {
+            val += cofactor(mat, 0, i) * mat[0][i];
+        }
+        return val;
     }
 
     /**
