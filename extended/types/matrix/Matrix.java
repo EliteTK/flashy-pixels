@@ -157,14 +157,27 @@ public class Matrix {
         return val;
     }
 
+    public static double[][] transpose(double[][] mat) {
+        double[][] out = new double[mat[0].length][mat.length];
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                out[j][i] = mat[i][j];
+            }
+        }
+        return out;
+    }
+
     /**
      *
      * @param mat
      * @return Returns the inverse of the matrix mat;
      */
     public static double[][] invert(double[][] mat) {
-        double[][] matOut = new double[mat.length][mat[0].length];
-        return matOut;
+        if (isSquare(mat)) {
+            return multiply(transpose(cofactor(mat)), 1 / determinant(mat));
+        } else {
+            throw new IllegalArgumentException("Invalid matrix dimensions. Matrix: invert", new ArrayIndexOutOfBoundsException());
+        }
     }
 
     /**
