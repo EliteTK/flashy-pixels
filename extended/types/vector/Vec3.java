@@ -1,4 +1,4 @@
-package extendedTypes.vector;
+package extended.types.vector;
 
 /**
  * Vector in 3 dimensions

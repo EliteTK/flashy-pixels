@@ -1,6 +1,6 @@
 package renderer.modelManager.polygon;
 
-import extendedTypes.polygon.Poly2d;
+import extended.types.polygon.Poly2d;
 
 /**
  *

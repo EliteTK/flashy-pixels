@@ -1,4 +1,4 @@
-package extendedTypes.polygon;
+package extended.types.polygon;
 
 public class TexturedPoly3d extends Poly3d {
 

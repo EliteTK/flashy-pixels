@@ -1,4 +1,4 @@
-package extendedTypes.matrix;
+package extended.types.matrix;
 
 public class Matrix {
 
@@ -28,6 +28,120 @@ public class Matrix {
             }
         }
         return zero;
+    }
+
+    /**
+     *
+     * @param mat
+     * @param i
+     * @param j
+     * @return Returns the minor of mat at position i, j.
+     */
+    public static double minor(double[][] mat, int i, int j) {
+        /* 
+         * 
+         */
+
+        if (isSquare(mat) && mat.length > 1) {
+            double[][] out = new double[mat.length - 1][mat[0].length - 1];
+            int wi = 0, wj = 0;
+            for (int ai = 0; ai < mat.length; ai++) {
+
+                if (ai != i) {
+                    for (int aj = 0; aj < mat[0].length; aj++) {
+                        if (aj != j) {
+                            out[wi][wj] = mat[ai][aj];
+                            wj++;
+                        }
+                    }
+                    wj = 0;
+                    wi++;
+                }
+            }
+            return determinant(out);
+        } else {
+            throw new IllegalArgumentException("Invalid matrix dimensions. Matrix: minor", new ArrayIndexOutOfBoundsException());
+        }
+    }
+
+    /**
+     *
+     * @param mat
+     * @param i
+     * @param j
+     * @return Returns the cofactor of mat at position i, j.
+     */
+    public static double cofactor(double[][] mat, int i, int j) {
+        if (isSquare(mat)) {
+            return Math.pow(-1, i + j) * minor(mat, i, j);
+        } else {
+            throw new IllegalArgumentException("Invalid matrix dimensions. Matrix: cofactor", new ArrayIndexOutOfBoundsException());
+        }
+    }
+
+    /**
+     *
+     * @param mat
+     * @return The determinant of the matrix mat.
+     */
+    public static double determinant(double[][] mat) {
+        if (isSquare(mat)) {
+            switch (mat.length) {
+                case 1:
+                    return mat[0][0];
+
+                case 2:
+                    return det2(mat);
+
+                case 3:
+                    return det3(mat);
+
+                default:
+                    return detDefault(mat);
+            }
+        } else {
+            throw new IllegalArgumentException("Invalid matrix dimensions. Matrix: determinant", new ArrayIndexOutOfBoundsException());
+        }
+    }
+
+    private static double det2(double[][] mat) {
+        /* [a b]
+         * [c d]
+         *
+         * det = ad - bc
+         */
+
+        return (mat[0][0] * mat[1][1]) - (mat[0][1] * mat[1][0]);
+    }
+
+    private static double det3(double[][] mat) {
+        /* [a b c]
+         * [d e f]
+         * [g h i]
+         *
+         * det = (aei+bfg+cdh)-(ceg+bdi+afh)
+         */
+
+        return ((mat[0][0] * mat[1][1] * mat[2][2])
+                + (mat[0][1] * mat[1][2] * mat[2][0])
+                + (mat[0][2] * mat[1][0] * mat[2][1]))
+                - ((mat[0][2] * mat[1][1] * mat[2][0])
+                + (mat[0][1] * mat[1][0] * mat[2][2])
+                + (mat[0][0] * mat[1][2] * mat[2][1]));
+    }
+
+    private static double detDefault(double[][]) {
+
+    }
+
+    /**
+     *
+     * @param mat
+     * @return Returns the inverse of the matrix mat;
+     */
+    public static double[][] invert(double[][] mat) {
+        double[][] matOut = new double[mat.length][mat[0].length];
+        return matOut;
     }
 
     /**
@@ -68,16 +182,6 @@ public class Matrix {
                 matOut[x][y] = mat[x][y] * multiplier;
             }
         }
-        return matOut;
-    }
-
-    /**
-     *
-     * @param mat
-     * @return Returns the inverse of the matrix mat;
-     */
-    public static double[][] invert(double[][] mat) {
-        double[][] matOut = new double[mat.length][mat[0].length];
         return matOut;
     }
 
@@ -125,7 +229,7 @@ public class Matrix {
 
             return matOut;
         } else {
-            throw new IllegalArgumentException("Invalid matrix dimensions. Matrix: add", new ArrayIndexOutOfBoundsException());
+            throw new IllegalArgumentException("Invalid matrix dimensions. Matrix: subtract", new ArrayIndexOutOfBoundsException());
         }
     }
 
@@ -136,5 +240,14 @@ public class Matrix {
             }
             System.out.println();
         }
+    }
+
+    /**
+     *
+     * @param mat
+     * @return Returns true if the matrix is a square matrix.
+     */
+    public static boolean isSquare(double[][] mat) {
+        return mat.length == mat[0].length;
     }
 }

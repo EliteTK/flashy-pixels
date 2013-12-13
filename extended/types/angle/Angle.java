@@ -1,4 +1,4 @@
-package extendedTypes.angle;
+package extended.types.angle;
 
 public class Angle {
 

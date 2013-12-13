@@ -1,4 +1,4 @@
-package extendedTypes.vector;
+package extended.types.vector;
 
 public class Vec2 {
 

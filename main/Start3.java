@@ -1,6 +1,6 @@
 package main;
 
-import extendedTypes.matrix.Matrix;
+import extended.types.matrix.Matrix;
 
 /**
  *
@@ -9,20 +9,20 @@ import extendedTypes.matrix.Matrix;
 public class Start3 {
 
     public static void main(String[] args) {
-        double[][] mat1 = {{1.0, 3.0, 1.0}, {4.0, 2.0, 1.0}, {7.0, 4.0, 1.0}};
-        double[][] mat2 = {{34.0}, {12.0}, {4.0}};
-        double[][] mat3 = {{1.0, 3.0, 1.0}};
-
+        double[][] mat1 = {{1,2,3},{4,5,6},{5,4,3}};
+        double[][] mat2 = new double[3][3];
+        
+        assert(Matrix.isSquare(mat1));
+        assert(Matrix.isSquare(mat2));
+        
+        for (int x = 0; x < mat1.length; x++) {
+            for (int y = 0; y < mat1[0].length; y++) {
+                System.out.println(x + " " + y);
+                mat2[x][y] = Matrix.cofactor(mat1, x, y);
+            }
+        }
+        
         Matrix.print(mat1);
-        System.out.println();
-        Matrix.print(mat2);
-        System.out.println();
-        Matrix.print(Matrix.invert(mat1));
-        System.out.println();
-        Matrix.print(Matrix.multiply(Matrix.invert(mat1), mat2));
-        System.out.println();
-        Matrix.print(Matrix.multiply(mat1, Matrix.multiply(Matrix.invert(mat1), mat2)));
-        System.out.println();
         Matrix.print(mat2);
     }
 }

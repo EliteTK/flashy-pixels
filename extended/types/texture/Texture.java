@@ -1,6 +1,6 @@
-package extendedTypes.texture;
+package extended.types.texture;
 
-import extendedTypes.colour.*;
+import extended.types.colour.Colour;
 
 public class Texture {
 

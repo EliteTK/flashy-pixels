@@ -1,6 +1,6 @@
-package extendedTypes.polygon;
+package extended.types.polygon;
 
-import extendedTypes.vector.Vec3;
+import extended.types.vector.Vec3;
 
 public class Poly3d {
 

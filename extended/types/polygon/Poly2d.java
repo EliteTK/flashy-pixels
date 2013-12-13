@@ -1,5 +1,5 @@
 
-package extendedTypes.polygon;
+package extended.types.polygon;
 
 /**
  *
