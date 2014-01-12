@@ -1,4 +1,4 @@
-package extended.types.colour;
+package extended.type.colour;
 
 public final class Colour {
 

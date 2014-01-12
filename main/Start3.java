@@ -1,6 +1,6 @@
 package main;
 
-import extended.types.matrix.Matrix;
+import extended.maths.Matrix;
 
 /**
  *

@@ -2,7 +2,6 @@ package main;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.util.Arrays;
 import renderer.window.Window;
@@ -35,8 +34,6 @@ public class Start {
         int fps;
 
         while (true) {
-
-            BufferStrategy bstrat;
 
             fps = (int) (1000000000 / delta());
 

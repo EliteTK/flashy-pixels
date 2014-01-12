@@ -1,4 +1,4 @@
-package extended.types.matrix;
+package extended.maths;
 
 public class Matrix {
 

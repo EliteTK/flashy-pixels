@@ -1,4 +1,4 @@
-package extended.storage.stack;
+package extended.type.stack;
 
 /**
  *
